@@ -32,7 +32,7 @@ async def main():
     enviar("🚀 Bot iniciado")
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
         page = await browser.new_page()
 
         while True:
